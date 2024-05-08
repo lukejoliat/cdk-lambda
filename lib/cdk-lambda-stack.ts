@@ -7,6 +7,7 @@ import {
 import { Construct } from "constructs";
 import { MyPipelineAppStage } from "./my-pipeline-app-stage";
 import { CfnRole } from "aws-cdk-lib/aws-iam";
+import { CodeBuildAction } from "aws-cdk-lib/aws-codepipeline-actions";
 
 export class CdkLambdaStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
