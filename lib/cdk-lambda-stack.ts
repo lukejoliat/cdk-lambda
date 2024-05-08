@@ -16,6 +16,12 @@ export class CdkLambdaStack extends cdk.Stack {
       pipelineName: "MyPipeline",
       synth: new ShellStep("Synth", {
         input: CodePipelineSource.gitHub("lukejoliat/cdk-lambda", "main"),
+        additionalInputs: {
+          "cdk-lambda-child": CodePipelineSource.gitHub(
+            "lukejoliat/cdk-lambda-child",
+            "main"
+          ),
+        },
         commands: ["npm ci", "npm run build", "npx cdk synth"],
       }),
     });
