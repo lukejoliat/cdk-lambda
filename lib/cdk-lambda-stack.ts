@@ -21,7 +21,7 @@ export class CdkLambdaStack extends cdk.Stack {
 
     pipeline.addStage(
       new MyPipelineAppStage(this, "test", {
-        env: { account: "111111111111", region: "eu-west-1" },
+        env: { account: "109095901433", region: "eu-west-1" },
       })
     );
   }
