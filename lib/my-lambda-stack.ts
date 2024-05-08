@@ -10,7 +10,7 @@ export class MyLambdaStack extends cdk.Stack {
       runtime: Runtime.NODEJS_18_X,
       handler: "handler.handler",
       code: Code.fromAsset(
-        process.env.CODEBUILD_SRC_DIR_lukejoliat_cdk_lambda_child_Source
+        process.env.CODEBUILD_SRC_DIR_lukejoliat_cdk_lambda_child_Source || ""
       ),
       // get code from additional inpput repo
       // code: Code.fromAsset(path.join(__dirname, "cdk-lambda-child")),
