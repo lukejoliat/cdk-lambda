@@ -6,6 +6,7 @@ import {
 } from "aws-cdk-lib/pipelines";
 import { Construct } from "constructs";
 import { MyPipelineAppStage } from "./my-pipeline-app-stage";
+import { CfnRole } from "aws-cdk-lib/aws-iam";
 
 export class CdkLambdaStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -21,7 +22,7 @@ export class CdkLambdaStack extends cdk.Stack {
 
     pipeline.addStage(
       new MyPipelineAppStage(this, "test", {
-        env: { account: "109095901433", region: "eu-west-1" },
+        env: { account: "109095901433", region: "us-east-1" },
       })
     );
   }
