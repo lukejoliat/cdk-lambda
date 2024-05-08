@@ -22,7 +22,14 @@ export class CdkLambdaStack extends cdk.Stack {
             "main"
           ),
         },
-        commands: ["npm ci", "npm run build", "npx cdk synth", "ls -la"],
+        commands: [
+          "npm ci",
+          "printenv",
+          "npm run build",
+          "printenv",
+          "npx cdk synth",
+          "printenv",
+        ],
       }),
     });
 
